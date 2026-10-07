@@ -44,7 +44,9 @@
   /* MOCK DA TELA */
   .tela{background:linear-gradient(145deg,#111827,#1f2937);border-radius:22px;padding:18px 18px 14px;box-shadow:0 30px 60px rgba(17,24,39,.28)}
   .tela .screen{background:linear-gradient(135deg,var(--azul) 0%,var(--azul-esc) 55%,#0a5f8f 100%);border-radius:12px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px;position:relative;overflow:hidden}
-  .tela .screen::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 12%,rgba(255,255,255,.28),transparent 45%)}
+  .tela .screen .screen-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+  .tela .screen::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,159,224,.55),rgba(10,95,143,.72));z-index:0}
+  .tela .screen .glare{position:absolute;inset:0;background:radial-gradient(circle at 78% 12%,rgba(255,255,255,.28),transparent 45%);z-index:2}
   .tela .screen .marca-tela{font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85;position:relative;z-index:1}
   .tela .screen b{font-size:26px;letter-spacing:-.4px;margin:8px 0 4px;position:relative;z-index:1}
   .tela .screen small{font-size:13px;opacity:.88;position:relative;z-index:1}
@@ -74,8 +76,16 @@
 
   .cinza{background:var(--fundo)}
 
+  /* GALERIA */
+  .galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+  .galeria figure{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--borda);aspect-ratio:4/3;box-shadow:0 12px 28px rgba(17,24,39,.10);background:var(--fundo)}
+  .galeria img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .galeria figure:hover img{transform:scale(1.06)}
+  .galeria figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;color:#fff;font-size:14px;font-weight:700;background:linear-gradient(transparent,rgba(17,24,39,.8))}
+
   /* STEPS */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:passo}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:passo}
+  @media(max-width:1180px){.galeria{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
   .step{position:relative;padding:32px 28px;background:#fff;border-radius:16px;border:1px solid var(--borda)}
   .step::before{counter-increment:passo;content:counter(passo);display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--azul);color:#fff;font-weight:800;font-size:19px;margin-bottom:18px}
   .step h3{font-size:19px;margin-bottom:8px}
@@ -154,9 +164,11 @@
     </div>
     <div class="tela">
       <div class="screen">
+        <img class="screen-bg" src="../images/gavioes-musculacao.jpg" alt="Exemplo de peça em vídeo na tela da academia">
         <span class="marca-tela">MyAds · Tela 01</span>
         <b>SUA MARCA AQUI</b>
         <small>Recepção · Academia Gaviões Cajamar</small>
+        <span class="glare"></span>
       </div>
       <div class="barra">
         <span class="live">no ar</span>
