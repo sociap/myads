@@ -1,0 +1,40 @@
+{
+  "atualizado_em": "2026-10-07",
+  "whatsapp": "5511937339977",
+  "espacos": [
+    {
+      "slug": "academia-gavioes-cajamar",
+      "nome": "Academia Gaviões Cajamar",
+      "categoria": "Academia",
+      "cidade": "Cajamar",
+      "estado": "SP",
+      "endereco": "R. Eucaliptos, 137 — Guaturinho, Santana de Parnaíba/SP",
+      "descricao": "Unidade Gaviões 24h com fluxo constante da manhã à madrugada. Telas HD na recepção, musculação e área de aulas, público fiel de todas as idades.",
+      "telas": 4,
+      "exibicoes_dia": 80,
+      "publico_mes": "+9 mil",
+      "publico_desc": "alunos/mês",
+      "horario": "24h",
+      "destaque": true,
+      "arquivo": "academia-gavioes-cajamar.html",
+      "status": "ativo"
+    },
+    {
+      "slug": "academia-renee-old-school",
+      "nome": "Academia Renée Old School",
+      "categoria": "Academia",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "endereco": "São Paulo/SP",
+      "descricao": "Academia de musculação e treino funcional com público fiel e rotina diária. Telas HD na recepção e musculação, com atenção plena nos intervalos entre séries.",
+      "telas": 3,
+      "exibicoes_dia": 60,
+      "publico_mes": "+6 mil",
+      "publico_desc": "alunos/mês",
+      "horario": "7 dias",
+      "destaque": false,
+      "arquivo": "academia-renee-old-school.html",
+      "status": "ativo"
+    }
+  ]
+}

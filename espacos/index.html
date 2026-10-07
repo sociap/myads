@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espaços — MyAds | Onde sua marca pode aparecer</title>
+<meta name="description" content="Listagem completa de espaços com telas indoor da rede MyAds. Escolha o ponto de mídia ideal para o seu público e anuncie.">
+<style>
+  :root{
+    --azul:#1b9fe0; --azul-esc:#0d7ab8; --laranja:#f5a11a;
+    --escuro:#111827; --cinza:#5b6472; --fundo:#f7f9fc; --borda:#e4e9f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--escuro);background:#fff;line-height:1.6}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda);z-index:50}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  nav img{height:44px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{text-decoration:none;color:var(--cinza);font-weight:600;font-size:15px;transition:.2s}
+  .nav-links a:hover{color:var(--azul)}
+
+  .btn{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;transition:.2s;cursor:pointer;border:none}
+  .btn-primary{background:var(--azul);color:#fff}
+  .btn-primary:hover{background:var(--azul-esc);transform:translateY(-2px)}
+  .btn-outline{border:2px solid var(--azul);color:var(--azul);background:#fff}
+  .btn-outline:hover{background:var(--azul);color:#fff}
+  .btn-laranja{background:var(--laranja);color:#fff}
+  .btn-laranja:hover{filter:brightness(.93);transform:translateY(-2px)}
+  .btn-sm{padding:11px 22px;font-size:15px}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#eaf6fd 0%,#fff 60%);padding:80px 0 64px;text-align:center}
+  .badge{display:inline-block;background:#e2f4fd;color:var(--azul-esc);font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;margin-bottom:18px;letter-spacing:.4px;text-transform:uppercase}
+  .hero h1{font-size:44px;line-height:1.15;letter-spacing:-1px;margin-bottom:20px;max-width:760px;margin-left:auto;margin-right:auto}
+  .hero h1 span{color:var(--azul)}
+  .hero p{font-size:19px;color:var(--cinza);max-width:620px;margin:0 auto 30px}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* STATS */
+  .stats{background:var(--escuro);color:#fff;padding:38px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat b{display:block;font-size:34px;color:var(--laranja)}
+  .stat span{font-size:14px;color:#c7cdd6}
+
+  section{padding:80px 0}
+  .section-title{text-align:center;max-width:680px;margin:0 auto 40px}
+  .section-title h2{font-size:36px;letter-spacing:-.5px;margin-bottom:12px}
+  .section-title p{color:var(--cinza);font-size:17px}
+
+  /* CONTROLES (busca/filtro) */
+  .controles{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+  .controles input,.controles select{padding:13px 16px;border:1px solid var(--borda);border-radius:10px;font-size:15px;font-family:inherit;background:#fff;transition:.2s;min-width:240px}
+  .controles input:focus,.controles select:focus{outline:none;border-color:var(--azul);box-shadow:0 0 0 3px rgba(27,159,224,.15)}
+  .controles input{flex:1;max-width:340px}
+  .resultado{ text-align:center;color:var(--cinza);font-size:14px;margin:-30px 0 34px}
+
+  /* CARDS DE ESPAÇO */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:#fff;border:1px solid var(--borda);border-radius:16px;padding:30px 28px;transition:.2s;display:flex;flex-direction:column;position:relative}
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(17,24,39,.08);border-color:var(--azul)}
+  .card.destaque{border:2px solid var(--azul);box-shadow:0 18px 40px rgba(27,159,224,.12)}
+  .card .tag{position:absolute;top:-13px;left:26px;background:var(--laranja);color:#fff;font-size:11px;font-weight:800;padding:5px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:.5px}
+  .cat{display:inline-block;background:#e2f4fd;color:var(--azul-esc);font-weight:700;font-size:12px;padding:5px 13px;border-radius:999px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:14px;align-self:flex-start}
+  .card h3{font-size:21px;margin-bottom:6px;letter-spacing:-.3px}
+  .card .local{font-size:14px;color:var(--cinza);margin-bottom:12px}
+  .card .desc{color:var(--cinza);font-size:15px;margin-bottom:18px;flex:1}
+  .mini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:var(--fundo);border:1px solid var(--borda);border-radius:12px;padding:14px 10px;margin-bottom:20px;text-align:center}
+  .mini b{display:block;font-size:18px;color:var(--azul-esc)}
+  .mini span{font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:.3px}
+  .acoes{display:flex;gap:10px;flex-wrap:wrap}
+  .acoes .btn{flex:1;text-align:center;min-width:130px}
+
+  .estado{background:var(--fundo);border:1px dashed var(--borda);border-radius:16px;padding:44px 24px;text-align:center;color:var(--cinza);font-size:16px;grid-column:1/-1}
+  .estado b{color:var(--escuro)}
+  .estado.erro{border-color:#f3c0c0;background:#fdf3f3;color:#a4423f}
+
+  /* CTA */
+  .cta{background:linear-gradient(135deg,var(--azul) 0%,var(--azul-esc) 100%);color:#fff;text-align:center}
+  .cta h2{font-size:34px;letter-spacing:-.5px;margin-bottom:14px}
+  .cta p{color:#d9eefb;font-size:17px;max-width:620px;margin:0 auto 28px}
+  .cta .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cta .btn-outline{border-color:#fff;color:#fff;background:transparent}
+  .cta .btn-outline:hover{background:#fff;color:var(--azul-esc)}
+
+  footer{background:var(--escuro);color:#9aa3af;padding:34px 0;text-align:center;font-size:14px}
+  footer img{height:34px;margin-bottom:10px;filter:brightness(0) invert(1)}
+  footer a{color:#c7cdd6;text-decoration:none}
+  footer a:hover{color:var(--azul)}
+
+  @media(max-width:900px){
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    .hero h1{font-size:32px}
+    .nav-links{display:none}
+    .controles input,.controles select{max-width:none;width:100%}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="../landing-page-myads.html"><img src="../images/logo-myads.png" alt="MyAds.com.br"></a>
+      <div class="nav-links">
+        <a href="#lista">Espaços</a>
+        <a href="../landing-page-myads.html#como-funciona">Como funciona</a>
+        <a href="../landing-page-myads.html#planos">Planos</a>
+        <a href="#contato" class="btn btn-primary" style="padding:10px 22px">Anunciar agora</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">Rede MyAds · Espaços</span>
+    <h1>Escolha o <span>espaço ideal</span> para a sua marca aparecer.</h1>
+    <p>Listagem completa dos pontos de mídia da rede — academias, shoppings, clínicas e mais. Filtre por categoria ou cidade e veja os detalhes de cada espaço.</p>
+    <div class="hero-ctas">
+      <a href="#lista" class="btn btn-laranja">Ver todos os espaços</a>
+      <a href="#contato" class="btn btn-outline">Falar com um especialista</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><b id="st-espacos">—</b><span>Espaços na rede</span></div>
+    <div class="stat"><b id="st-telas">—</b><span>Telas ativas</span></div>
+    <div class="stat"><b id="st-exibicoes">—</b><span>Exibições/dia</span></div>
+    <div class="stat"><b id="st-cidades">—</b><span>Cidades atendidas</span></div>
+  </div>
+</div>
+
+<section id="lista">
+  <div class="container">
+    <div class="section-title">
+      <h2>Espaços disponíveis</h2>
+      <p>Atualizado a partir do <code>listagem.json</code> — adicione um novo espaço no JSON e ele aparece aqui automaticamente.</p>
+    </div>
+
+    <div class="controles">
+      <input id="busca" type="search" placeholder="Buscar por nome, cidade ou endereço…" aria-label="Buscar espaço">
+      <select id="filtro" aria-label="Filtrar por categoria">
+        <option value="">Todas as categorias</option>
+      </select>
+    </div>
+
+    <p class="resultado" id="resultado" hidden></p>
+
+    <div class="cards" id="cards">
+      <div class="estado">Carregando espaços…</div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="cta">
+  <div class="container">
+    <h2>Não achou o espaço certo?</h2>
+    <p>Nossa rede cresce todo mês. Conte o que você procura (cidade, tipo de público, formato) e montamos a combinação ideal de telas para a sua campanha.</p>
+    <div class="btn-row">
+      <a class="btn btn-laranja" id="cta-zap" href="https://wa.me/5511937339977?text=Ol%C3%A1!+Quero+saber+mais+sobre+os+espa%C3%A7os+da+MyAds" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-outline" href="../landing-page-myads.html#contato">Solicitar proposta</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="../images/logo-myads.png" alt="MyAds.com.br">
+  <p>© 2026 MyAds.com.br — Inventário publicitário em telas indoor. Todos os direitos reservados.</p>
+  <p style="margin-top:6px"><a href="../landing-page-myads.html">Início</a> · <a href="../landing-page-myads.html#planos">Planos da rede</a></p>
+</footer>
+
+<script>
+(function(){
+  var URL_JSON = 'listagem.json';
+  var dados = { espacos: [] };
+  var cardsEl = document.getElementById('cards');
+  var buscaEl = document.getElementById('busca');
+  var filtroEl = document.getElementById('filtro');
+  var resultadoEl = document.getElementById('resultado');
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function montarCard(e){
+    var zap = 'https://wa.me/' + (dados.whatsapp || '5511937339977') +
+      '?text=' + encodeURIComponent('Olá! Tenho interesse em anunciar na ' + e.nome);
+    return '' +
+      '<article class="card' + (e.destaque ? ' destaque' : '') + '">' +
+        (e.destaque ? '<span class="tag">Destaque</span>' : '') +
+        '<span class="cat">' + esc(e.categoria) + '</span>' +
+        '<h3>' + esc(e.nome) + '</h3>' +
+        '<p class="local">📍 ' + esc(e.cidade) + '/' + esc(e.estado) + (e.endereco && e.endereco !== (e.cidade + '/' + e.estado) ? ' · ' + esc(e.endereco) : '') + '</p>' +
+        '<p class="desc">' + esc(e.descricao) + '</p>' +
+        '<div class="mini">' +
+          '<div><b>' + esc(e.telas) + '</b><span>Telas</span></div>' +
+          '<div><b>' + esc(e.exibicoes_dia) + '</b><span>Exib./dia</span></div>' +
+          '<div><b>' + esc(e.publico_mes) + '</b><span>' + esc(e.publico_desc || 'público/mês') + '</span></div>' +
+        '</div>' +
+        '<div class="acoes">' +
+          '<a class="btn btn-primary btn-sm" href="' + esc(e.arquivo) + '">Ver espaço</a>' +
+          '<a class="btn btn-outline btn-sm" href="' + esc(zap) + '" target="_blank" rel="noopener">Anunciar</a>' +
+        '</div>' +
+      '</article>';
+  }
+
+  function filtrar(){
+    var q = (buscaEl.value || '').trim().toLowerCase();
+    var cat = filtroEl.value;
+    return dados.espacos.filter(function(e){
+      if (e.status && e.status !== 'ativo') return false;
+      if (cat && e.categoria !== cat) return false;
+      if (!q) return true;
+      var alvo = [e.nome, e.categoria, e.cidade, e.estado, e.endereco, e.descricao]
+        .join(' ').toLowerCase();
+      return alvo.indexOf(q) !== -1;
+    });
+  }
+
+  function render(){
+    var lista = filtrar();
+
+    if (!lista.length){
+      cardsEl.innerHTML = '<div class="estado">Nenhum espaço encontrado para a sua busca. ' +
+        'Fale com a gente e montamos uma proposta sob medida.</div>';
+    } else {
+      cardsEl.innerHTML = lista.map(montarCard).join('');
+    }
+
+    resultadoEl.hidden = !buscaEl.value && !filtroEl.value;
+    resultadoEl.textContent = lista.length + (lista.length === 1 ? ' espaço encontrado' : ' espaços encontrados');
+  }
+
+  function preencherStats(){
+    var ativos = dados.espacos.filter(function(e){ return !e.status || e.status === 'ativo'; });
+    var telas = 0, exib = 0, cidades = {};
+    ativos.forEach(function(e){
+      telas += Number(e.telas) || 0;
+      exib += Number(e.exibicoes_dia) || 0;
+      if (e.cidade) cidades[e.cidade + '/' + e.estado] = true;
+    });
+    document.getElementById('st-espacos').textContent = ativos.length;
+    document.getElementById('st-telas').textContent = telas;
+    document.getElementById('st-exibicoes').textContent = exib;
+    document.getElementById('st-cidades').textContent = Object.keys(cidades).length;
+  }
+
+  function montarFiltro(){
+    var cats = {};
+    dados.espacos.forEach(function(e){ if (e.categoria) cats[e.categoria] = true; });
+    Object.keys(cats).sort().forEach(function(c){
+      var o = document.createElement('option');
+      o.value = c; o.textContent = c;
+      filtroEl.appendChild(o);
+    });
+  }
+
+  function falha(msg){
+    cardsEl.innerHTML = '<div class="estado erro"><b>Não foi possível carregar ' + URL_JSON + '.</b><br>' +
+      esc(msg) + '<br><br>Se estiver abrindo o arquivo direto no navegador (file://), sirva a pasta com um servidor local, ' +
+      'por exemplo: <code>python3 -m http.server</code> na pasta <code>myads</code>.</div>';
+    resultadoEl.hidden = true;
+  }
+
+  buscaEl.addEventListener('input', render);
+  filtroEl.addEventListener('change', render);
+
+  fetch(URL_JSON)
+    .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(json){
+      dados = json;
+      if (!Array.isArray(dados.espacos)) throw new Error('formato inválido: falta a lista "espacos"');
+      montarFiltro();
+      preencherStats();
+      render();
+    })
+    .catch(function(err){ falha(err.message || 'erro desconhecido'); });
+})();
+</script>
+
+</body>
+</html>
