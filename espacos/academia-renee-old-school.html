@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuncie na Academia Renée Old School — MyAds</title>
+<meta name="description" content="Anuncie sua marca dentro da Academia Renée Old School. Telas HD em pontos de alto fluxo, rotação segmentada e relatórios de exibição.">
+<style>
+  :root{
+    --azul:#1b9fe0; --azul-esc:#0d7ab8; --laranja:#f5a11a;
+    --escuro:#111827; --cinza:#5b6472; --fundo:#f7f9fc; --borda:#e4e9f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--escuro);background:#fff;line-height:1.6}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda);z-index:50}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  nav img{height:44px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{text-decoration:none;color:var(--cinza);font-weight:600;font-size:15px;transition:.2s}
+  .nav-links a:hover{color:var(--azul)}
+
+  .btn{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;transition:.2s;cursor:pointer;border:none}
+  .btn-primary{background:var(--azul);color:#fff}
+  .btn-primary:hover{background:var(--azul-esc);transform:translateY(-2px)}
+  .btn-outline{border:2px solid var(--azul);color:var(--azul);background:#fff}
+  .btn-outline:hover{background:var(--azul);color:#fff}
+  .btn-laranja{background:var(--laranja);color:#fff}
+  .btn-laranja:hover{filter:brightness(.93);transform:translateY(-2px)}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#eaf6fd 0%,#fff 60%);padding:80px 0 72px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .badge{display:inline-block;background:#e2f4fd;color:var(--azul-esc);font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;margin-bottom:18px;letter-spacing:.4px;text-transform:uppercase}
+  .hero h1{font-size:44px;line-height:1.15;letter-spacing:-1px;margin-bottom:20px}
+  .hero h1 span{color:var(--azul)}
+  .hero p{font-size:19px;color:var(--cinza);max-width:540px;margin-bottom:26px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .chip{background:#fff;border:1px solid var(--borda);border-radius:999px;padding:7px 16px;font-size:14px;color:var(--cinza);font-weight:600}
+
+  /* MOCK DA TELA */
+  .tela{background:linear-gradient(145deg,#111827,#1f2937);border-radius:22px;padding:18px 18px 14px;box-shadow:0 30px 60px rgba(17,24,39,.28)}
+  .tela .screen{background:linear-gradient(135deg,var(--azul) 0%,var(--azul-esc) 55%,#0a5f8f 100%);border-radius:12px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px;position:relative;overflow:hidden}
+  .tela .screen::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 12%,rgba(255,255,255,.28),transparent 45%)}
+  .tela .screen .marca-tela{font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85;position:relative;z-index:1}
+  .tela .screen b{font-size:26px;letter-spacing:-.4px;margin:8px 0 4px;position:relative;z-index:1}
+  .tela .screen small{font-size:13px;opacity:.88;position:relative;z-index:1}
+  .tela .barra{display:flex;justify-content:space-between;align-items:center;color:#9aa3af;font-size:12px;margin-top:12px}
+  .tela .barra .live{color:#34d399;font-weight:700}
+  .tela .barra .live::before{content:"●";margin-right:6px;animation:piscar 1.6s ease-in-out infinite}
+  @keyframes piscar{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* STATS */
+  .stats{background:var(--escuro);color:#fff;padding:38px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat b{display:block;font-size:34px;color:var(--laranja)}
+  .stat span{font-size:14px;color:#c7cdd6}
+
+  section{padding:80px 0}
+  .section-title{text-align:center;max-width:680px;margin:0 auto 56px}
+  .section-title h2{font-size:36px;letter-spacing:-.5px;margin-bottom:12px}
+  .section-title p{color:var(--cinza);font-size:17px}
+
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:#fff;border:1px solid var(--borda);border-radius:16px;padding:32px 28px;transition:.2s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(17,24,39,.08);border-color:var(--azul)}
+  .card .ico{width:52px;height:52px;border-radius:12px;background:#e2f4fd;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .card h3{font-size:20px;margin-bottom:10px}
+  .card p{color:var(--cinza);font-size:15px}
+
+  .cinza{background:var(--fundo)}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:passo}
+  .step{position:relative;padding:32px 28px;background:#fff;border-radius:16px;border:1px solid var(--borda)}
+  .step::before{counter-increment:passo;content:counter(passo);display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--azul);color:#fff;font-weight:800;font-size:19px;margin-bottom:18px}
+  .step h3{font-size:19px;margin-bottom:8px}
+  .step p{color:var(--cinza);font-size:15px}
+
+  /* PRICING */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+  .plan{background:#fff;border:1px solid var(--borda);border-radius:18px;padding:36px 30px;display:flex;flex-direction:column;position:relative}
+  .plan.destaque{border:2px solid var(--azul);box-shadow:0 24px 48px rgba(27,159,224,.14)}
+  .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--laranja);color:#fff;font-size:12px;font-weight:800;padding:6px 16px;border-radius:999px;text-transform:uppercase;letter-spacing:.5px}
+  .plan h3{font-size:21px;margin-bottom:6px}
+  .plan .preco{font-size:38px;font-weight:800;color:var(--azul);margin:14px 0 4px}
+  .plan .preco small{font-size:15px;font-weight:600;color:var(--cinza)}
+  .plan ul{list-style:none;margin:22px 0 28px;flex:1}
+  .plan li{padding:9px 0 9px 30px;position:relative;color:var(--cinza);font-size:15px;border-bottom:1px dashed var(--borda)}
+  .plan li::before{content:"✓";position:absolute;left:0;color:var(--azul);font-weight:800}
+
+  /* CTA / FORM */
+  .cta{background:linear-gradient(135deg,var(--azul) 0%,var(--azul-esc) 100%);color:#fff}
+  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .cta h2{font-size:34px;letter-spacing:-.5px;margin-bottom:14px}
+  .cta p{color:#d9eefb;font-size:17px;margin-bottom:26px}
+  .form{background:#fff;border-radius:18px;padding:34px;color:var(--escuro)}
+  .form h3{font-size:22px;margin-bottom:20px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--cinza);text-transform:uppercase;letter-spacing:.4px}
+  .field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid var(--borda);border-radius:10px;font-size:15px;font-family:inherit;transition:.2s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--azul);box-shadow:0 0 0 3px rgba(27,159,224,.15)}
+  .form .btn{width:100%;margin-top:6px}
+
+  footer{background:var(--escuro);color:#9aa3af;padding:34px 0;text-align:center;font-size:14px}
+  footer img{height:34px;margin-bottom:10px;filter:brightness(0) invert(1)}
+  footer a{color:#c7cdd6;text-decoration:none}
+  footer a:hover{color:var(--azul)}
+
+  @media(max-width:900px){
+    .hero-grid,.cta-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .cards,.steps,.plans{grid-template-columns:1fr}
+    .hero h1{font-size:32px}
+    .nav-links{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="../landing-page-myads.html"><img src="../images/logo-myads.png" alt="MyAds.com.br"></a>
+      <div class="nav-links">
+        <a href="#espaco">O espaço</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#planos">Planos</a>
+        <a href="#contato" class="btn btn-primary" style="padding:10px 22px">Anunciar agora</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Espaço publicitário · Academia</span>
+      <!-- TODO: completar endereço e dados da unidade -->
+      <h1>Sua marca na <span>Academia Renée Old School</span>, no ritmo de quem treina de verdade.</h1>
+      <p>Anuncie dentro da Renée Old School: telas HD na recepção e na área de musculação, com público fiel, rotina diária de treino e atenção plena nos intervalos entre séries. Arte, rotação e relatório de exibição inclusos.</p>
+      <div class="hero-ctas">
+        <a href="#planos" class="btn btn-laranja">Ver planos do espaço</a>
+        <a href="https://wa.me/5511937339977?text=Ol%C3%A1!+Tenho+interesse+em+anunciar+na+Academia+Ren%C3%A9e+Old+School" target="_blank" rel="noopener" class="btn btn-outline">Falar no WhatsApp</a>
+      </div>
+      <div class="chips">
+        <span class="chip">📍 São Paulo/SP</span>
+        <span class="chip">🕐 Treino de manhã, almoço e noite</span>
+        <span class="chip">🏋️ Musculação · funcional · hipertrofia</span>
+      </div>
+    </div>
+    <div class="tela">
+      <div class="screen">
+        <span class="marca-tela">MyAds · Tela 01</span>
+        <b>SUA MARCA AQUI</b>
+        <small>Recepção · Academia Renée Old School</small>
+      </div>
+      <div class="barra">
+        <span class="live">no ar</span>
+        <span>Loop 15s · 60 exibições/dia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><b>3</b><span>Telas HD no espaço</span></div>
+    <div class="stat"><b>60</b><span>Exibições/dia por tela</span></div>
+    <div class="stat"><b>+6 mil</b><span>Alunos por mês</span></div>
+    <div class="stat"><b>7 dias</b><span>Por semana em operação</span></div>
+  </div>
+</div>
+
+<section id="espaco">
+  <div class="container">
+    <div class="section-title">
+      <h2>Sobre o espaço</h2>
+      <p>Um ponto de mídia com audiência cativa: quem treina, espera e descansa olha para a tela.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ico">📍</div>
+        <h3>Localização</h3>
+        <p>Unidade Renée Old School em São Paulo/SP, com fácil acesso e fluxo constante de alunos e visitantes do entorno ao longo de todo o dia.</p>
+      </div>
+      <div class="card">
+        <div class="ico">👥</div>
+        <h3>Público</h3>
+        <p>Alunos fiéis de musculação e treino funcional, com hábito de frequência diária. Perfil atento a performance, saúde, nutrição e estilo de vida.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🖥️</div>
+        <h3>Formatos e pontos</h3>
+        <p>Peças de vídeo de 15s em telas horizontais na recepção e musculação, além de arte estática em alta definição. Rotação segmentada por tela e janela horária de pico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" class="cinza">
+  <div class="container">
+    <div class="section-title">
+      <h2>Como funciona</h2>
+      <p>Do primeiro contato ao ar em até 48 horas.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Escolha o plano</h3>
+        <p>Defina por quanto tempo sua marca fica no ar e em quantas telas da unidade. Sem fidelidade forçada.</p>
+      </div>
+      <div class="step">
+        <h3>Envie sua arte</h3>
+        <p>Mande seu vídeo ou imagem no formato aceito — ou contrate nossa produção criativa de peça animada.</p>
+      </div>
+      <div class="step">
+        <h3>Campanha no ar</h3>
+        <p>Sua marca entra em exibição no espaço e você recebe relatório com exibições, horários e telas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="planos">
+  <div class="container">
+    <div class="section-title">
+      <h2>Planos para este espaço</h2>
+      <p>Valores por unidade. Combine com a equipe a melhor janela para o seu público.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Rotativa</h3>
+        <div class="preco">R$ 297<small>/mês</small></div>
+        <ul>
+          <li>Sua peça na tela da recepção</li>
+          <li>Até 40 exibições/dia</li>
+          <li>Loop de 15 segundos</li>
+          <li>Relatório mensal de exibição</li>
+          <li>Suporte por e-mail</li>
+        </ul>
+        <a href="#contato" class="btn btn-outline" style="text-align:center">Começar agora</a>
+      </div>
+      <div class="plan destaque">
+        <span class="tag">Mais escolhido</span>
+        <h3>Destaque</h3>
+        <div class="preco">R$ 597<small>/mês</small></div>
+        <ul>
+          <li>Todas as 3 telas da unidade</li>
+          <li>Até 60 exibições/dia por tela</li>
+          <li>Janelas horárias de pico</li>
+          <li>Relatório quinzenal de exibição</li>
+          <li>Suporte prioritário no WhatsApp</li>
+        </ul>
+        <a href="#contato" class="btn btn-primary" style="text-align:center">Começar agora</a>
+      </div>
+      <div class="plan destaque">
+        <span class="tag">Premium</span>
+        <h3>Old School</h3>
+        <div class="preco">R$ 997<small>/mês</small></div>
+        <ul>
+          <li>Loop completo em todos os pontos</li>
+          <li>Exibição em horários de pico garantida</li>
+          <li>1 peça animada produzida pela MyAds</li>
+          <li>Relatório quinzenal + troca de arte livre</li>
+          <li>Atendimento dedicado</li>
+        </ul>
+        <a href="#contato" class="btn btn-outline" style="text-align:center">Solicitar proposta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="cta">
+  <div class="container cta-grid">
+    <div>
+      <h2>Coloque sua marca no ar nesta semana</h2>
+      <p>Preencha o formulário e receba em até 1 dia útil uma proposta para a Academia Renée Old School — sem compromisso.</p>
+      <p><strong>📞 (11) 93733-9977 · ✉️ comercial@myads.com.br</strong></p>
+    </div>
+    <form class="form" onsubmit="event.preventDefault();alert('Obrigado! Nossa equipe comercial entrará em contato em breve.');">
+      <h3>Solicite uma proposta</h3>
+      <div class="field">
+        <label for="nome">Nome*</label>
+        <input id="nome" type="text" required placeholder="Seu nome">
+      </div>
+      <div class="field">
+        <label for="empresa">Empresa</label>
+        <input id="empresa" type="text" placeholder="Nome da empresa">
+      </div>
+      <div class="field">
+        <label for="email">E-mail*</label>
+        <input id="email" type="email" required placeholder="voce@empresa.com.br">
+      </div>
+      <div class="field">
+        <label for="espaco">Espaço de interesse</label>
+        <select id="espaco">
+          <option>Academia Gaviões Cajamar</option>
+          <option selected>Academia Renée Old School</option>
+          <option>Outro espaço</option>
+        </select>
+      </div>
+      <button class="btn btn-laranja" type="submit">Quero anunciar aqui</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <img src="../images/logo-myads.png" alt="MyAds.com.br">
+  <p>© 2026 MyAds.com.br — Inventário publicitário em telas indoor. Todos os direitos reservados.</p>
+  <p style="margin-top:6px"><a href="../landing-page-myads.html">Início</a> · <a href="academia-gavioes-cajamar.html">Academia Gaviões Cajamar</a></p>
+</footer>
+
+</body>
+</html>
